@@ -1,0 +1,3 @@
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from './ui/dialog';
+import { Button } from './ui/button';
+export default function ConfirmDelete({task,onConfirm,onCancel}){ return <Dialog open={!!task} onOpenChange={v=>!v&&onCancel()}><DialogContent><DialogTitle className="text-lg font-semibold">Delete task?</DialogTitle><DialogDescription className="mt-2 text-sm leading-6 text-slate-500">This will permanently remove <span className="font-medium text-slate-700 dark:text-slate-300">“{task?.title}”</span> from your TaskList.</DialogDescription><div className="mt-6 flex justify-end gap-2"><Button variant="outline" onClick={onCancel}>Cancel</Button><Button variant="destructive" onClick={onConfirm}>Delete task</Button></div></DialogContent></Dialog> }
